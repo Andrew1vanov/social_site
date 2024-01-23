@@ -4,8 +4,11 @@ repository for social site
 login: admin; password: admin
 
 Users:
-vasily, fsdfASFe12414
-
+vasily, fsdfASFe12414, asdfQWRQW141
+Ivan, adsdfjJFH111, flahdsHHH123
+Jony, jfaHHH12341F
+Ivan_curochkin, jfjjJJJJ1141
+Maxim, fjHJFJ223
 
 ## Послеловательность действия для создания аутентификации
 1. Создание url адресов для входа и выхода из профиля
@@ -15,3 +18,5 @@ vasily, fsdfASFe12414
 
 ## Справка по html 
 input - создание кнопки
+<a href="{% url "logout" %}">Logout</a> - создание ссылки с текстом
+<span class="user">  - раздел шапки

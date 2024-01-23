@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'images.apps.ImagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,17 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# добавление возможности смены пароля
 LOGIN_REDIRECT_URL = 'dashboard' #Сообщает django url адрес, на который следует направлять пользователя после успешной аутентификации
 LOGIN_URL = 'login' # адрес, на который следует перенаправлять пользователя, чтобы зарегистрировать его вход
 LOGOUT_URL = 'logout' # адре, на который следует перенаправлять пользователя, чтобы зарегистрировать его выход
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#Обеспечение закачивания файлов на сайт и раздачу медиафайлов
+MEDIA_URL = 'media/' # - базовый url адрес используемый для раздачи медиа файлов
+MEDIA_ROOT = BASE_DIR / 'media' # локальный путь нахождения медиафайлов
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+]
